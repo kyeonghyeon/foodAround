@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>recommendation around Uni</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="posts.scss">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+      <div class="back">
+          <figure><%= image_tag('pigs.png', :class => "back", :align => "middle")%></figure>
+      </div>
+      <div class="contents">
+        <header>
+          <h1>아래에서 원하는 맛집을 찾아보세요</h1>
+        </header>
+    <div class="board">
+        <div class="select_search">
+            <div class="select_form">
+            	<%= form_tag posts_index_url, :method => 'get' do %>
+        			<%= select_tag :university_id, options_from_collection_for_select(@universities, "id", "name", :selected => params[:university_id]) %>
+        			<%= submit_tag '대학으로 찾기', :name => nil %>
+    			<% end %>
+        	</div>
+            <div class="search_form">
+              <%= form_tag posts_index_path, :method => 'get' do %>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "제목으로 찾기", :name => nil %>
+              <% end %>
+            </div>
+        </div>
+        <div class="articles">
+            <% @posts.each do |p| %>
+              <p></p><a href="/posts/show/<%= p.id%>">[<%= p.id %>] [<%= p.university.name %>] <%= p.title %></a></p>
+            <% end %>
+        </div>
+        
+        <div class="new_post">
+            <h3><a href="/posts/new">[글쓰러 가기]</a></h3>
+        </div>
+        </div>
+      </body>
+  </div>
+    

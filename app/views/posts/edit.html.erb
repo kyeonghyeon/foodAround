@@ -1,0 +1,14 @@
+<div class="editpost">
+    <div class="edittitle">
+        <h4> [<%= @post.id %> 번 글 수정]</h4>
+    </div>
+    <div class="editcontent">
+        <form action="/posts/update/<%= @post.id %>" method="post">
+            <p>제목</p>
+            <input type="text" name="input_title" value="<%= @post.title %>">
+            <p>내용</p>
+            <input type="text" name="input_content" value="<%= @post.content %>">
+            <input type="submit" value="수정">
+        </form>
+    </div>
+</div>

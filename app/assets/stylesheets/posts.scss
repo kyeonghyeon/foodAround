@@ -1,0 +1,68 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+    margin: 30px 40px;
+}
+
+.select_form, .search_form {
+    white-space: nowrap;
+    margin: 20px 40px;
+    width: 50%;
+}
+
+.select_search {
+    display: flex;
+    width: 50%;
+}
+
+.inputs, .editcontent {
+    margin: 20px 0;
+}
+
+.input_form, .apost, .editpost {
+    background-image: url("newpig.png");
+    background-size: 100%;
+    margin: 0 40px;
+    font-size: 2rem;
+    line-height: 2rem;
+    opacity: 50%;
+    padding: 10px 20px;
+}
+
+
+.comments {
+    margin: 100px 0;
+}
+
+.post_title {
+    margin: 0 40px;
+}
+
+.board {
+    margin: 0px;
+}
+
+.articles {
+    margin: 10px 0px 0px 40px;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.new_post {
+    margin: 40px 0 0 40px;
+}
+
+.back {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.commentlist {
+    margin: 10px 0;
+}
+
+table td {
+    margin-right: 10px;
+}

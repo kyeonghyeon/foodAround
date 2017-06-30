@@ -1,0 +1,19 @@
+<div class="post_title">
+    <h1>새로운 맛집을 추천해주세요!</h1>
+</div>
+
+  <div class="input_form">
+      <div class="inputs">
+        <%= form_tag posts_create_url, :method => 'post' do %>
+          <p>카테고리</p>
+          <%= select_tag :university_id, options_from_collection_for_select(@universities, "id", "name", :selected => params[:university_id]) %>
+    	  <p><br>제목</p>
+    	  <%= text_field_tag :input_title %>
+    	  <br>
+    	  <p><br>내용</p>
+    	  <%= text_area_tag :input_content %>
+    	  <%= submit_tag '글쓰기', :name => nil %>
+        <% end %>
+      </div>
+  </div>
+</form>

@@ -1,0 +1,37 @@
+<div class="apost">
+  <h4> [<%=  @post.id %> 번 글]</h4>
+  <h3> 제목: <%= @post.title %> </h3>
+  <p> 학교: <%= @post.university.name %></p>
+  <p> 내용: <%= @post.content %> </p>
+  
+  <div class="comments">
+    <div class="newcomment">
+      <h3>댓글</h3>
+      <form action='/posts/show/<%= @post.id %>/comments/create' method="post">
+          <input type="text" name="input_comment">
+          <input type="submit" value="댓글쓰기">
+      </form>
+    </div>
+  
+    <div class="commentlist">
+      <% @comments.each do |c| %>
+        <p><%= c.content %> 
+        <a href="/posts/show/<%= @post.id %>/comments/destroy/<%= c.id %>" 
+        data-method="post"
+        data-confirm="댓글을 삭제합니다">[삭제]</a></p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="menus">
+    <div class="table">
+      <tr>
+        <td><a href="/">[목록으로 가기]</a></td>
+        <td><a href="/posts/edit/<%= @post.id %>">[수정]</a></td>
+        <td><a href="/posts/destroy/<%= @post.id %>" 
+        data-confirm="진짜로 삭제하시겠습니까?" data-method="post">[삭제]</a></td>
+      </tr>
+    </div>
+  </div>
+</div>
+  
